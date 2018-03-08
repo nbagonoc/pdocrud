@@ -1,43 +1,46 @@
 <?php include 'header.php'; ?>
+<?php include 'db.php'; ?>
 <?php include 'functions.php'; ?>
-<?php databaseConnect(); ?>
 
 <div class="container">
-  <div class="main">
-    <h1 class="text-center">View, Edit, and Delete Users</h1>
-	<?php
-		
-		//QUERY
-		$query = mysql_query("SELECT * FROM users");
+	<div class="panel panel-default">
+		<div class="panel-heading">
+    		<h1 class="text-center">View, Edit, and Delete Users</h1>
+		</div>
+		<div class="panel-body">
+			<?php
+				
+				//QUERY
+				$query = "SELECT * FROM users";
 
-	  	echo "<table class=\"table table-striped\">";
-	    echo "<thead>";
-		echo "<tr>";
-	    echo "<th>Name</th>";
-	    echo "<th>Email</th>";
-	    echo "<th>Edit</th>";
-	    echo "<th>Delete</th>";
-		echo "</tr>";
-	    echo "</thead>";
-	    echo "<tbody>";
+			  	echo "<table class=\"table table-striped\">";
+			    echo "<thead>";
+				echo "<tr>";
+			    echo "<th>Name</th>";
+			    echo "<th>Email</th>";
+			    echo "<th>Edit</th>";
+			    echo "<th>Delete</th>";
+				echo "</tr>";
+			    echo "</thead>";
+			    echo "<tbody>";
 
-	    //RETURN
-		while($read = mysql_fetch_array($query)){
-		$id = $read['ID'];
-		$name = $read['name'];
-		$email = $read['email'];
-		$password = $read['password'];
-		//echo "<tr><td>$name</td><td>$email</td><td><a href=\"updateForm.php?ID=$id&name=$name&email=$email&password=$password\">edit</a></td><td><a href=\"delete.php?ID=$id&name=$name&email=$email&password=$password\">delete</a></td></tr>";
-		//echo "<tr><td>$name</td><td>$email</td><td><a href=\"edit.php?ID=$id\">edit</a></td><td><a href=\"delete.php?ID=$id&name=$name&email=$email&password=$password\">delete</a></td></tr>";
-		echo "<tr><td>$name</td><td>$email</td><td><a href=\"edit.php?ID=$id\">edit</a></td><td><a href=\"delete.php?ID=$id\">delete</a></td></tr>";
+			    //RETURN
+			    $datas = $connection->query($query);
 
-		}
-		
-		echo "</tbody>";
-		echo "</table>";
+				foreach($datas as $data){
+					$id = $data['id'];
+					$name = $data['name'];
+					$email = $data['email'];
+					$password = $data['password'];
+					echo "<tr><td>$name</td><td>$email</td><td><a href=\"edit.php?ID=$id\" class=\"btn btn-default btn-xs\">edit</a></td><td><a href=\"delete.php?ID=$id\" class=\"btn btn-danger btn-xs\">delete</a></td></tr>";
+				}
+				
+				echo "</tbody>";
+				echo "</table>";
 
-	?>
-  </div>
+			?>
+		</div>
+	</div>
 </div>
 
 <?php include 'footer.php'; ?>

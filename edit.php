@@ -1,6 +1,6 @@
 <?php include 'header.php'; ?>
+<?php include 'db.php'; ?>
 <?php include 'functions.php'; ?>
-<?php databaseConnect(); ?>
 
 <div class="container">
   <div class="main">
@@ -9,15 +9,16 @@
 		
 		//QUERY
 		$idRequest = $_REQUEST['ID'];
-		$query = mysql_query("SELECT * FROM Users WHERE id = '$idRequest'");
+		$query = "SELECT * FROM users WHERE id = '$idRequest'";
 
 	    //RETURN
-		while($read = mysql_fetch_array($query)){
-		$id = $read['ID'];
-		$name = $read['name'];
-		$email = $read['email'];
-		$password = $read['password'];
-		}
+	    $datas = $connection->query($query);
+	    foreach($datas as $data){
+			$id = $data['id'];
+			$name = $data['name'];
+			$email = $data['email'];
+			$password = $data['password'];
+	    }
 
 	?>
 
@@ -49,10 +50,10 @@
 				
 				<div class="form-group">		
 					<div class="col-lg-6">
-						<button class="btn btn-default form-control" type="submit" name="submit" id="jsSubmit">Submit</button>
+						<button class="btn btn-success form-control" type="submit" name="submit" id="jsSubmit">Edit</button>
 					</div>
 					<div class="col-lg-6">
-						<a href="read.php" class="btn btn-default form-control">Cancel</a>
+						<a href="read.php" class="btn btn-danger form-control">Cancel</a>
 					</div>
 				</div>
 			</form>
