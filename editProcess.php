@@ -1,6 +1,4 @@
 <?php include 'header.php'; ?>
-<?php include 'db.php'; ?>
-<?php include 'functions.php'; ?>
 
 <div class="container">
 	<div class="panel panel-default">
@@ -46,4 +44,3 @@
 </div>
 
 <?php include 'footer.php'; ?>
-<?php databaseClose(); ?>

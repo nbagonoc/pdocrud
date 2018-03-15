@@ -13,7 +13,8 @@
   <link href="css/animate.css" rel="stylesheet">
   <!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:bold|Roboto" rel="stylesheet">  google font -->
 </head>
-
+<!-- database -->
+<?php include 'db.php'; ?>
 <body>
 	<!-- navigation -->
 	<nav class="navbar navbar-default navbar-fixed-top"> <!-- add body{ padding-top:50px; } to fix problem with fixed top-->

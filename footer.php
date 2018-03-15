@@ -8,5 +8,6 @@
   <script src="js/respond.min.js"></script><!-- fix ie 6, 7 and 8 -->
   <script src="js/custom.js"></script><!-- fix ie 6, 7 and 8 -->
 </body>
-
+<!-- close database connection-->
+<?php $this->connection = null; ?>
 </html>
