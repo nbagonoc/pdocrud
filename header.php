@@ -34,7 +34,7 @@
 		    <ul class="nav navbar-nav">
 		      <li><a href="index.php">Home</a></li>
 		      <li><a href="create.php">Create</a></li>
-		      <li><a href="read.php">Edit/Delete</a></li>
+		      <li><a href="read.php">Modify</a></li>
 		    </ul>
 		  </div><!--/.nav-collapse -->
 

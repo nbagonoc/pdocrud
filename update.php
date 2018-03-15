@@ -23,7 +23,7 @@
 	<div class="container">
 	  <div class="main">
 	    <h1 class="text-center">Edit User</h1>
-			<form action="editProcess.php" method="POST" id="updateForm" class="form-horizontal">
+			<form action="updateMethod.php" method="POST" id="updateForm" class="form-horizontal">
 			<input type="hidden" name="newID" value="<?php echo $id;?>"/>
 				<div class="form-group">	
 					<label class="col-lg-2 control-label">Name:</label>

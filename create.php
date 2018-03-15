@@ -6,7 +6,7 @@
 			<h1 class="text-center">Create Users</h1>
 		</div>
 		<div class="panel-body">
-			<form action="createProcess.php" method="POST" id="createForm" class="form-horizontal">
+			<form action="createMethod.php" method="POST" id="createForm" class="form-horizontal">
 				
 				<div class="form-group">		
 					<label class="col-lg-2 control-label">Name:</label>

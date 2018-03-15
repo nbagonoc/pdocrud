@@ -22,7 +22,7 @@
 			?>
 			<!--Dummmy the value for JS validation. You can fetch the actual values if you want,
 				but all you really need is the ID to delete the user-->
-			<form action="deleteProcess.php" method="POST" class="form-horizontal">
+			<form action="deleteMethod.php" method="POST" class="form-horizontal">
 				<input type="hidden" name="newID" value="<?php echo $id; ?>">
 				<input type="hidden" name="newname" id="jsName" value="<?php echo $name; ?>"><!-- dummmy the value. for JS validation -->
 				<input type="hidden" name="newEmail" id="jsEmail" value="dummy@gmail.com"><!-- dummmy the value. for JS validation -->

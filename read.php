@@ -3,7 +3,7 @@
 <div class="container">
 	<div class="panel panel-default">
 		<div class="panel-heading">
-    		<h1 class="text-center">View, Edit, and Delete Users</h1>
+    		<h1 class="text-center">View and Modify Users</h1>
 		</div>
 		<div class="panel-body">
 			<?php
@@ -30,7 +30,7 @@
 					$name = $data['name'];
 					$email = $data['email'];
 					$password = $data['password'];
-					echo "<tr><td>$name</td><td>$email</td><td><a href=\"edit.php?ID=$id\" class=\"btn btn-default btn-xs\">edit</a></td><td><a href=\"delete.php?ID=$id\" class=\"btn btn-danger btn-xs\">delete</a></td></tr>";
+					echo "<tr><td>$name</td><td>$email</td><td><a href=\"update.php?ID=$id\" class=\"btn btn-default btn-xs\">edit</a></td><td><a href=\"delete.php?ID=$id\" class=\"btn btn-danger btn-xs\">delete</a></td></tr>";
 				}
 				
 				echo "</tbody>";
